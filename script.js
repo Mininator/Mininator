@@ -124,14 +124,23 @@ logoImg.style.objectFit = "cover";
 
 if (SITE.heroTitleImg) {
   document.getElementById("heroTitle").innerHTML =
-    `<img src="${SITE.heroTitleImg}" alt="${SITE.heroTitle}">`;
+    `<img src="${SITE.heroTitleImg}" alt="${SITE.heroTitle}" style=" height: 300px; object-fit: contain;">`;
 } else {
   document.getElementById("heroTitle").textContent =
     SITE.heroTitle;
 }
 if (SITE.heroTextImg) {
+  const heroTitle = document.getElementById("heroTitle");
+  const heroText = document.getElementById("heroText");
+  heroTitle.style.marginBottom = "0";
+  heroText.style.marginTop = "0";
+  heroText.style.paddingTop = "0";
   document.getElementById("heroText").innerHTML =
-    `<img src="${SITE.heroTextImg}" alt="${SITE.heroText}" style=" height: 50px; object-fit: contain;">`;
+    `<img src="${SITE.heroTextImg}" alt="${SITE.heroText}" style="display: block; width: min(90vw, 900px); max-width: 100%; max-height: 100px; height: auto; margin: 0 auto; object-fit: contain;">`;
+  const mobileHeroSpacing = document.createElement("style");
+  mobileHeroSpacing.textContent =
+    "@media (max-width: 600px) { #heroText { margin-top: -60px !important; } }";
+  document.head.appendChild(mobileHeroSpacing);
 } else {
   document.getElementById("heroText").textContent =
     SITE.heroText; 
