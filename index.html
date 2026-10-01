@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mon site</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img class="logo" alt="Logo" id="logoImg" src="">
+
+    <nav>
+      <button class="btn active" data-t="home">Accueil</button>
+      <button class="btn" data-t="projects">Projects</button>
+      <button class="btn" data-t="models">Modèles 3D</button>
+      <button class="btn" data-t="soon">Coming soon</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="home" class="show">
+      <div class="hero">
+        <h1 id="heroTitle"></h1>
+        <p id="heroText"></p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h1>Mes Projets</h1>
+      <div class="list" id="pg"></div>
+    </section>
+
+    <section id="models">
+      <div class="models3d">
+        <h1 id="modelsTitle"></h1>
+        <p id="modelsText"></p>
+      </div>
+      <div class="grid" id="mg"></div>
+    </section>
+
+    <section id="soon">
+      <div class="soon">COMING SOON</div>
+    </section>
+
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="mbox" id="mbox"></div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
