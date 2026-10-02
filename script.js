@@ -104,8 +104,8 @@ const models = [
 
     d: "Ajouté le 02/09/2026",
 
-    img: "https://raw.githubusercontent.com/Mininator/Mininator/main/models/Laptop/screen2.png",
-    shots: ["https://raw.githubusercontent.com/Mininator/Mininator/main/models/Laptop/screen1.png,https://raw.githubusercontent.com/Mininator/Mininator/main/models/Laptop/screen2.png,https://raw.githubusercontent.com/Mininator/Mininator/main/models/Laptop/screen3.png"],
+    img: "https://raw.githubusercontent.com/Mininator/Mininator/main/models/Laptop/laptop.png",
+    shots: ["https://raw.githubusercontent.com/Mininator/Mininator/main/models/Laptop/screen1.png","https://raw.githubusercontent.com/Mininator/Mininator/main/models/Laptop/screen2.png","https://raw.githubusercontent.com/Mininator/Mininator/main/models/Laptop/screen3.png"],
     fname: "https://raw.githubusercontent.com/Mininator/Mininator/main/models/Laptop/Laptop.zip",
   },
   
