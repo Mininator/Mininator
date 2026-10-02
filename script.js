@@ -88,7 +88,7 @@ const models = [
 
     img: "https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/switch/icon.png",
     shots: ["https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/switch/screen1.png","https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/switch/screen2.png","https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/switch/screen3.png"],
-    fname: ""
+    fname: "https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/switch/switchs.zip",
   },
 
   
@@ -519,67 +519,29 @@ function openModel(m) {
 
       try {
 
-        const dls =
-          await claude.use("downloads");
+        const url = m.file || m.fname;
 
-
-        if (!dls) {
-
-          msg.textContent =
-            "Téléchargement indisponible ici.";
-
+        if (!url) {
+          msg.textContent = "Aucun fichier disponible au téléchargement.";
           return;
         }
 
+        msg.textContent = "Téléchargement en cours…";
 
-        let data;
-        let name;
-
-
-        /*
-           Fichier réel
-        */
-
-        if (m.file) {
-
-          data =
-            await (
-              await fetch(m.file)
-            ).blob();
-
-          name =
-            m.fname ||
-            (m.n + ".zip");
-
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Échec du téléchargement");
         }
 
-
-        /*
-           Fichier de test
-        */
-
-        else {
-
-          data =
-            "Fichier de " +
-            m.n +
-            " : à remplacer par ton vrai fichier.";
-
-          name =
-            m.n +
-            ".txt";
-        }
-
-
-        await dls.save({
-
-          filename: name,
-
-          data: data
-
-        });
-
-
+        const blob = await response.blob();
+        const link = document.createElement("a");
+        const downloadUrl = URL.createObjectURL(blob);
+        link.href = downloadUrl;
+        link.download = m.filename || `${m.n}.zip`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(downloadUrl);
         msg.textContent = "";
 
       }
@@ -587,13 +549,7 @@ function openModel(m) {
 
       catch (e) {
 
-        msg.textContent =
-          (
-            e &&
-            e.code === "declined"
-          )
-            ? ""
-            : "Téléchargement impossible.";
+        msg.textContent = "Téléchargement impossible.";
 
       }
 
