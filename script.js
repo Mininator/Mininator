@@ -90,16 +90,16 @@ const models = [
     shots: ["https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/switch/screen1.png","https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/switch/screen2.png","https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/switch/screen3.png"],
     fname: "https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/switch/switchs.zip",
   },
-   {
+  {
     n: "TV Anicenne",
 
     d: "Ajouté le 02/09/2026",
 
     img: "https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/tv old/TV.png",
     shots: ["https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/tv old/screen1.png","https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/tv old/screen2.png","https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/tv old/screen3.png"],
-    fname: "https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/tv old/tv_old.zip.zip",
+    fname: "https://raw.githubusercontent.com/Mininator/Mininator/refs/heads/main/models/tv old/tv_old.zip",
   },
-   
+  
 
   
 
